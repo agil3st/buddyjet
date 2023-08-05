@@ -1,16 +1,30 @@
-# buddyjet
+# Welcome to BuddyJet
 
-Your buddy-budget tracker
+Your buddy-budget tracker. Never lose your attention to your future. Manage all your budget including your salary, business and more. Customize your wallet, transaction with your style.
 
-## Getting Started
+## What's in it?
 
-This project is a starting point for a Flutter application.
+- Multi Wallet
+- Budget Tracker
+- Chart / Report
+- Filter by Date (Calendar picker)
+- Scheduled Transaction
+- Custom Categories
+- Custom Styles
+- Work Offline
+- Share Transaction/Budget
 
-A few resources to get you started if this is your first Flutter project:
+## Coming Soon Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Rich-text Transaction Note 
+- Reorderable Categories 
+- Notification 
+- Reminder 
+- Import/Export
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Pages
+- Home / Dashboard 
+- Transactions 
+- Create Transaction 
+- My Budgets 
+- Account

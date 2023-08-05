@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="jet">#363537</color>
+    <color name="crayola">#ef2d56</color>
+    <color name="pumpkin">#ed7d3a</color>
+    <color name="pistachio">#8cd867</color>
+    <color name="emerald" type="material">#2fbf71</color>
+</resources>
