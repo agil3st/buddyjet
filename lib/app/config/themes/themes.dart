@@ -3,7 +3,8 @@ import 'package:buddyjet/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
 class Themes {
-  final String fontPrimary = FontFamily.outfit;
+  static String fontPrimary = FontFamily.outfit;
+  static String fontSecondary = FontFamily.cabin;
 
   ThemeData get light => ThemeData(
         fontFamily: fontPrimary,
