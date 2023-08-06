@@ -8,9 +8,13 @@ if (localPropertiesFile.exists()) {
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw new FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
+def flutterBuildMode = localProperties.getProperty('flutter.buildMode')
+def flutterCompileSDKVersion = localProperties.getProperty('flutter.compileSdkVersion')
+def flutterMinSDKVersion = localProperties.getProperty('flutter.minSdkVersion')
+def flutterTargetSDKVersion = localProperties.getProperty('flutter.targetSdkVersion')
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
     flutterVersionCode = '1'
@@ -27,7 +31,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace "id.layground.buddyjet"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion flutterCompileSDKVersion.toInteger()
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -48,8 +52,8 @@ android {
         applicationId "id.layground.buddyjet"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion flutterMinSDKVersion.toInteger()
+        targetSdkVersion flutterTargetSDKVersion.toInteger()
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
