@@ -1,4 +1,6 @@
-import 'package:buddyjet/app/config/constants/constant_lib.dart';
+import 'package:buddyjet/app/config/themes/spacing.dart';
+import 'package:buddyjet/gen/assets.gen.dart';
+import 'package:buddyjet/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 
 class IndexScreen extends StatelessWidget {
@@ -7,8 +9,17 @@ class IndexScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(Constants.appTitle),
+      backgroundColor: ColorName.emerald.shade50,
+      extendBody: true,
+      extendBodyBehindAppBar: true,
+      body: ListView(
+        children: [
+          Spacing.height20,
+          Assets.images.buddyJetV.svg(
+            height: 30,
+          ),
+          Spacing.height20,
+        ],
       ),
     );
   }

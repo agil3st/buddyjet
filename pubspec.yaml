@@ -36,10 +36,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
   intl: ^0.18.1
+  get: ^4.6.5
+  get_storage: ^2.1.1
   flutter_svg: ^2.0.7
   dots_indicator: ^3.0.0
-  go_router: ^10.0.0
-  shared_preferences: ^2.2.0
   flutter_feather_icons: ^2.0.0+1
   cached_network_image: ^3.2.3
   fade_shimmer: ^2.2.0

@@ -4,6 +4,7 @@ import 'package:buddyjet/app/config/themes/no_scroll_overlay.dart';
 import 'package:buddyjet/app/config/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +16,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return GetMaterialApp(
       title: Constants.appTitle,
       debugShowCheckedModeBanner: false,
       scrollBehavior: NoScrollOverlay(),
       theme: Themes().light,
-      routerConfig: AppRouter.router,
+      getPages: AppRouter.router,
       builder: FlutterSmartDialog.init(),
     );
   }
