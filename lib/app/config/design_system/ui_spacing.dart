@@ -45,6 +45,10 @@ class UISpacing {
       const EdgeInsets.symmetric(horizontal: 18);
   static EdgeInsets get paddingHorizontal20 =>
       const EdgeInsets.symmetric(horizontal: 20);
+  static EdgeInsets get paddingHorizontal22 =>
+      const EdgeInsets.symmetric(horizontal: 22);
+  static EdgeInsets get paddingHorizontal24 =>
+      const EdgeInsets.symmetric(horizontal: 24);
 
   static EdgeInsets get paddingVertical2 =>
       const EdgeInsets.symmetric(vertical: 2);
