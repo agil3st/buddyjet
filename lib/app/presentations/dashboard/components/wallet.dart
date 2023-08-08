@@ -47,12 +47,25 @@ class Wallet extends StatelessWidget {
                   padding: UISpacing.paddingAll6,
                   child: Assets.images.buddyJet.svg(height: 30, width: 30),
                 ),
-                UISpacing.width14,
+                UISpacing.width10,
+                Text(
+                  'Wallet Name',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 24,
+                    color: ColorName.emerald.shade50,
+                  ),
+                ),
+              ],
+            ),
+            UISpacing.height10,
+            Row(
+              children: [
                 Text(
                   value,
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 18,
+                    fontSize: 22,
                     color: ColorName.emerald.shade50,
                   ),
                 ),
@@ -60,17 +73,8 @@ class Wallet extends StatelessWidget {
                 Icon(
                   TablerIcons.eye,
                   color: ColorName.emerald.shade50,
-                )
+                ),
               ],
-            ),
-            UISpacing.height4,
-            Text(
-              'Wallet Name',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 24,
-                color: ColorName.emerald.shade50,
-              ),
             ),
           ],
         ),

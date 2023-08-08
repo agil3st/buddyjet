@@ -2,6 +2,7 @@ import 'package:buddyjet/app/config/constants/constant_lib.dart';
 import 'package:buddyjet/app/config/router/app_router.dart';
 import 'package:buddyjet/app/config/themes/no_scroll_overlay.dart';
 import 'package:buddyjet/app/config/themes/themes.dart';
+import 'package:buddyjet/app/controllers/controllers_registrant.dart';
 import 'package:buddyjet/app/utils/status_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -9,6 +10,7 @@ import 'package:get/get.dart';
 
 void main() {
   StatusBarManager.setToDefault();
+  ControllersRegistrant.putLazy();
   runApp(const MyApp());
 }
 
