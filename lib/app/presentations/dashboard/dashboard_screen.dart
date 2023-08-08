@@ -1,12 +1,14 @@
 import 'package:buddyjet/app/components/scaffolds/default_scaffold.dart';
 import 'package:buddyjet/app/components/shimmers/shimmer_square.dart';
 import 'package:buddyjet/app/config/constants/constant_lib.dart';
+import 'package:buddyjet/app/config/design_system/ui_radius.dart';
 import 'package:buddyjet/app/config/design_system/ui_spacing.dart';
 import 'package:buddyjet/app/presentations/dashboard/components/wallet.dart';
 import 'package:buddyjet/gen/colors.gen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -72,7 +74,120 @@ class DashboardScreen extends StatelessWidget {
                 itemBuilder: (context, index) => Wallet(value: wallets[index]),
               ),
             ),
-            UISpacing.height20,
+            UISpacing.height16,
+            Container(
+              padding: UISpacing.paddingAll20,
+              margin: UISpacing.paddingAll20,
+              decoration: BoxDecoration(
+                color: ColorName.emerald.shade50,
+                borderRadius: UIRadius.circular10,
+              ),
+              child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 8,
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  childAspectRatio: 1 / 1,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                ),
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: ColorName.emerald.shade200,
+                      borderRadius: UIRadius.circular8,
+                    ),
+                    padding: UISpacing.paddingAll16,
+                    child: const Icon(TablerIcons.address_book),
+                  );
+                },
+              ),
+            ),
+            UISpacing.height16,
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: UISpacing.paddingHorizontal24,
+                    child: const Text(
+                      'Latest Transaction',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                    ),
+                  ),
+                  UISpacing.height14,
+                  ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: UISpacing.paddingHorizontal22.copyWith(bottom: 60),
+                    itemCount: 8,
+                    itemBuilder: (context, index) => SizedBox(
+                      height: 60,
+                      child: Row(
+                        children: [
+                          AspectRatio(
+                            aspectRatio: 1 / 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: ColorName.pumpkin.withOpacity(.3),
+                                borderRadius: UIRadius.circular8,
+                              ),
+                              padding: UISpacing.paddingAll16,
+                              child: const Icon(TablerIcons.album_off),
+                            ),
+                          ),
+                          UISpacing.width12,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'Transaction Title',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                UISpacing.height4,
+                                const Text(
+                                  'Rp. 323.511',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          UISpacing.width12,
+                          Container(
+                            padding: UISpacing.paddingAll6,
+                            decoration: const BoxDecoration(
+                              color: ColorName.emerald,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              TablerIcons.plus,
+                              size: 14,
+                              color: ColorName.emerald.shade50,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    separatorBuilder: (context, index) => Divider(
+                      indent: 2,
+                      endIndent: 2,
+                      thickness: 0.35,
+                      color: Colors.grey.shade200,
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
